@@ -2,7 +2,7 @@
 A C++23 wrapper of `std::string_view` for simple hexadecimal parsing. Written for the Warthog crypto platform.
 
 ## Features:
-- Header only
+- Header only ([hex_view.hxx](hex_view.hxx))
 - On-the-fly conversion
 - Ranges support
 - Configurable exceptions
