@@ -1,6 +1,6 @@
 #include <ranges>
 
-[[nodiscard]] inline constexpr std::uint8_t hex_digit(char c, bool &valid) {
+[[nodiscard]] inline constexpr char hex_digit(char c, bool &valid) {
   switch (c) {
   case '0':
     return 0;
