@@ -1,6 +1,6 @@
 #include <ranges>
 
-[[nodiscard]] inline constexpr char hex_digit(char c, bool &valid) {
+[[nodiscard]] inline constexpr std::uint8_t hex_digit(char c, bool &valid) {
   switch (c) {
   case '0':
     return 0;
@@ -62,7 +62,7 @@ public:
   constexpr bool insert_into(std::output_iterator<ByteType> auto iter) const {
     bool valid = true;
     for (size_t i = 0; i < hexStr.size() / 2; ++i) {
-      *(iter) = ByteType((hex_digit(hexStr[2 * i], valid) << 4) +
+      *(iter) = ByteType((hex_digit(hexStr[2 * i], valid) << 4) |
                          (hex_digit(hexStr[2 * i + 1], valid)));
       ++iter;
     }
